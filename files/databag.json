@@ -1,0 +1,6 @@
+{
+    "id": "user1",
+ 	"name": "Karl Miller",
+	"shell": "/bin/bash",
+	"password": "InsecurePW"
+}
