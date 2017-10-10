@@ -61,6 +61,8 @@ end
 # end
 
 
+log "DATA_BAG_PATH: #{Chef::Config[:data_bag_path]}"
+log "DATA_BAG_SECRET: #{Chef::Config[:encrypted_data_bag_secret]}"
 
 # Copy the encrypt_databag.rb to tmp dir
 cookbook_file "/tmp/encrypt_databag.rb" do
@@ -72,9 +74,15 @@ cookbook_file "/tmp/encrypt_databag.rb" do
 end
 
 
+directory "#{Chef::Config[:data_bag_path]}/users" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
 
 # cookbook_file "/var/chef/data_bags/users.json" do
-cookbook_file "#{Chef::Config[:data_bag_path]}/users.json" do
+cookbook_file "#{Chef::Config[:data_bag_path]}/users/user1.json" do
   owner 'root'
   group 'root'
   mode '0644'
