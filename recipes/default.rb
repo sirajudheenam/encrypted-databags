@@ -72,8 +72,9 @@ cookbook_file "/tmp/encrypt_databag.rb" do
 end
 
 
-#  cookbook_file "#{Chef::Config[:data_bag_path]}/users.json"
-cookbook_file "/var/chef/data_bags/users.json" do
+
+# cookbook_file "/var/chef/data_bags/users.json" do
+cookbook_file "#{Chef::Config[:data_bag_path]}/users.json" do
   owner 'root'
   group 'root'
   mode '0644'
@@ -111,10 +112,10 @@ log "DATA_BAG_PATH: #{Chef::Config[:data_bag_path]}"
 log "DATA_BAG_SECRET: #{Chef::Config[:encrypted_data_bag_secret]}"
 
 
-# secret = Chef::EncryptedDataBagItem.load_secret("/etc/chef/encrypted_data_bag_secret")
-# creds = Chef::EncryptedDataBagItem.load("users.json", "user1", secret)
-# log creds['name']
-# log password=creds['password']
+secret = Chef::EncryptedDataBagItem.load_secret("/etc/chef/encrypted_data_bag_secret")
+creds = Chef::EncryptedDataBagItem.load("users", "user1", secret)
+log creds['name']
+log password=creds['password']
 
 
 # users=begin
