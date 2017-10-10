@@ -1,4 +1,3 @@
 # encrypted-databag
 
-TODO: Enter the cookbook description here.
-
+## It creates an encrypted databag and uses it
