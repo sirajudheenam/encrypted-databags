@@ -1,0 +1,24 @@
+{
+  "id": "user1",
+  "name": {
+    "encrypted_data": "gQ1KJoRuawvYJu+1Yt7+qqOGzHYgJXPjd3kvJv2o\n",
+    "iv": "IMdno8EBM9UYiHIs\n",
+    "auth_tag": "78+GuqsdJHXV+kEbLvUDig==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  },
+  "shell": {
+    "encrypted_data": "qI6MmsRAMx/PFlBTeABQB+b7uSmyio14k5wo2A==\n",
+    "iv": "lW4bOZntMM7/1o5n\n",
+    "auth_tag": "7qB8DNBUUlrWwiVMnO/Bvg==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  },
+  "password": {
+    "encrypted_data": "xDvY7+45F8jPWqq6VWiTjlSiJi8efPZObdIQShM=\n",
+    "iv": "0WDMFwFd/pGh/GVc\n",
+    "auth_tag": "TFjkqSUpmkc369wa5l8pmg==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  }
+}
