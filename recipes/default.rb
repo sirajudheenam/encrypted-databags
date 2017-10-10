@@ -30,6 +30,9 @@
 # default['dcc-samba']['username']=samba_creds['user']
 # default['dcc-samba']['password']=samba_creds['password']
 
+# Create Encrypted Databag from Databag using secret
+# ruby encrypt_databag.rb databag.json users.json secret.txt
+
 log Chef::Config[:data_bag_path]
 
 directory '/tmp/databags' do
@@ -57,6 +60,8 @@ end
 #   action :create
 # end
 
+
+
 # Copy the encrypt_databag.rb to tmp dir
 cookbook_file "/tmp/encrypt_databag.rb" do
   source 'encrypt_databag.rb'
@@ -65,6 +70,9 @@ cookbook_file "/tmp/encrypt_databag.rb" do
   mode '0755'
   action :create
 end
+
+# cookbook_file "/var/chef/data_bags/users.json"
+
 cookbook_file "#{Chef::Config[:data_bag_path]}/users.json" do
   owner 'root'
   group 'root'
